@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalyan King</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      max-width: 380px;
+      width: 90%;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      text-align: center;
+      padding: 25px 20px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-bottom: 14px;
+      border: 3px solid #d4af37;
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      margin: 8px 0;
+      font-size: 15px;
+      color: #666;
+    }
+
+    .vip-text {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 12px 0 20px;
+      color: #111;
+    }
+
+    .timer-btn {
+      display: block;
+      background: linear-gradient(135deg, #ff416c, #ff004f);
+      color: #fff;
+      font-weight: bold;
+      padding: 14px;
+      border-radius: 50px;
+      margin: 12px 0;
+      width: 100%;
+      border: none;
+      cursor: not-allowed;
+      font-size: 15px;
+      box-shadow: 0 4px 12px rgba(255,0,79,0.4);
+      transition: all 0.3s ease;
+    }
+
+    .telegram-btn {
+      display: block;
+      background: linear-gradient(135deg, #1da1f2, #0d8ddb);
+      color: #fff;
+      font-weight: bold;
+      padding: 14px;
+      border-radius: 50px;
+      margin: 12px 0;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      box-shadow: 0 4px 12px rgba(0, 153, 255, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .telegram-btn:hover {
+      background: linear-gradient(135deg, #0d8ddb, #1da1f2);
+      transform: scale(1.05);
+    }
+
+    .footer-text {
+      font-size: 13px;
+      color: #444;
+      margin-top: 15px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 480px) {
+      .title { font-size: 22px; }
+      .vip-text { font-size: 14px; }
+      .subtitle { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="satta.jpg" alt="Logo">
+    <div class="title">𝐒𝐈𝐊𝐀𝐍𝐃𝐄𝐑 𝐁𝐀𝐇𝐈 𝐕𝐈𝐏 𝐌𝐀𝐓𝐊𝐀</div>
+    <div class="subtitle"><span id="subs">43,900</span> Subscribers</div>
+    <div class="vip-text">✨ All Game VIP Charts Available Here ✨</div>
+
+    <button class="timer-btn" id="countdown">Free Joining Ends In 15 Seconds</button>
+
+    <button class="telegram-btn" id="telegramBtn" onclick="openTelegram()">🚀 JOIN FREE TELEGRAM</button>
+
+    <div class="footer-text">⭐ SIRF 3 DIN HAMARE SATH KAAM KARKE DEKHO ⭐</div>
+    <div class="footer-text">FIX_OPEN_FIX_JODI_FIX_PANEL <br>
+    @ कल्याण
+    <br>
+    @ श्रीदेवी
+    <br>
+    @ टाइम बाजार
+    <br>
+    @ मिलन गेम [नाइट]
+    <br>
+    @ राजधानी [नाइट]
+    <br>
+    @ मेन बाजार [नाइट]</div>
+  </div>
+
+  <script>
+    // Countdown timer
+    let timeLeft = 15;
+    const countdownBtn = document.getElementById("countdown");
+
+    const timer = setInterval(() => {
+      timeLeft--;
+      countdownBtn.textContent = "Free Joining Ends In " + timeLeft + " Seconds";
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        countdownBtn.textContent = "Offer Expired!";
+        countdownBtn.style.background = "gray";
+        countdownBtn.style.boxShadow = "none";
+        // Auto open Telegram after countdown
+        openTelegram();
+      }
+    }, 1000);
+
+    // Auto increment subscribers
+    let subs = 43900;
+    const subsTarget = 43950;
+    const subsElement = document.getElementById("subs");
+
+    const subsTimer = setInterval(() => {
+      if (subs < subsTarget) {
+        subs++;
+        subsElement.textContent = subs.toLocaleString();
+      } else {
+        clearInterval(subsTimer);
+      }
+    }, 120);
+
+    // Telegram redirect function
+    function openTelegram() {
+      window.location.href = "https://t.me/+Ejry1xnFeZ0zZGJl";
+    }
+  </script>
+
+</body>
+</html>
